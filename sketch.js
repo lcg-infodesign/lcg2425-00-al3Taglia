@@ -11,17 +11,17 @@ function draw() {
   // put drawing code here
   background("#b6c2cd");
 
- 
-
   fill('#161a1e');
   noStroke(); 
   let lato = 20;
   let distanza = lato * sqrt(2);
-  
-  let nColums = (windowWidth - lato)/distanza; //lato*sqrt2
-  let nRows = (windowHeight - lato )/distanza;
+  let margine = 30;
 
   
+  let nColums = floor((windowWidth - 2 * margine)/distanza); //lato*sqrt2
+  let nRows = (windowHeight - 2* margine)/distanza;
+ 
+  rectMode(CENTER);
   
   //if qualcosa --> creo questo, else --> ruoto di QUARTER_PI
   //qualcosa: se  100 è divisibile per 3
@@ -30,8 +30,8 @@ function draw() {
 
     for(let j = 0; j < nRows; j++) { //ciclo per fare le righe
       
-      let x = i * distanza + distanza/2;
-      let y = j * distanza + distanza/2;
+      let x = i * distanza + margine + distanza / 2 ;
+      let y = j * distanza + margine + distanza / 2 ;
       
       push();
       translate(x, y);
@@ -42,7 +42,6 @@ function draw() {
         rotate(QUARTER_PI);
         
       }
-  rectMode (CENTER);
       
       rect(0, 0, lato, lato); 
       pop();

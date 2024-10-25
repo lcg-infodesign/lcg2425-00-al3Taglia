@@ -10,8 +10,8 @@ let nLines = 100;
 function draw() {
   // put drawing code here
   background("#b6c2cd");
-
-  fill('#161a1e');
+  let colors = ["#161a1e", "#182028", "#222930", "#091018"];
+  //fill('#161a1e');
   noStroke(); 
   let lato = 20;
   let distanza = lato * sqrt(2);
@@ -42,7 +42,9 @@ function draw() {
         rotate(QUARTER_PI);
         
       }
-      
+
+      let color = random(colors);
+      fill(color)
       rect(0, 0, lato, lato); 
       pop();
     }
